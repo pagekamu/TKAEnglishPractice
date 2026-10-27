@@ -1,195 +1,73 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#413B63">
-<title>EnglishHack · Vocabulary Drill</title>
+<title>Vocabulary Booster · Pilih Set</title>
 <style>
-:root{--bg:#FAF9F6;--surface:#fff;--soft:#F2EFF7;--primary:#413B63;--deep:#312C4C;--berry:#8C2D52;--burgundy:#6E223F;--pink:#FFF0F4;--lav:#EDEBF6;--ink:#181621;--muted:#625E70;--border:#E5E1ED;--shadow:0 14px 40px rgba(49,44,76,.09)}
+:root{--bg:#FAF9F6;--surface:#fff;--soft:#F2EFF7;--primary:#413B63;--deep:#312C4C;--berry:#8C2D52;--burgundy:#6E223F;--pink:#FFF0F4;--lav:#EDEBF6;--ink:#181621;--muted:#625E70;--border:#E5E1ED;--yellow:#F7D85A;--green:#2f855a;--shadow:0 14px 40px rgba(49,44,76,.09)}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
-button,input,select{font:inherit}button{cursor:pointer}
-.topbar{background:linear-gradient(120deg,#413B63 0%,#63335D 50%,#8C2D52 100%);color:white;padding:22px max(20px,calc((100% - 1080px)/2))}
-.brand{display:flex;align-items:center;gap:12px}.logo{display:grid;place-items:center;width:42px;height:42px;border:1px solid #ffffff75;border-radius:14px;background:#ffffff18;font-weight:900;font-size:18px}.brand h1{font-size:20px;line-height:1.1;margin:0}.brand p{margin:4px 0 0;color:#ffffffc9;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-main{max-width:1080px;margin:auto;padding:26px 20px 56px}.intro{display:flex;justify-content:space-between;gap:16px;align-items:end;margin-bottom:20px}.eyebrow{color:var(--berry);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.intro h2{font-size:clamp(25px,4vw,34px);line-height:1.15;letter-spacing:-.04em;margin:6px 0}.intro p{margin:0;color:var(--muted);max-width:620px}.count-pill{white-space:nowrap;border:1px solid var(--border);background:white;border-radius:999px;padding:9px 13px;font-size:13px;font-weight:700;color:var(--primary)}
-.toolbar{display:grid;grid-template-columns:minmax(180px,1fr) 150px 150px auto;gap:10px;margin-bottom:18px}.field{width:100%;border:1px solid var(--border);background:white;border-radius:12px;padding:12px 13px;color:var(--ink);outline:none}.field:focus{border-color:var(--berry);box-shadow:0 0 0 3px #8C2D5218}.btn{border:0;border-radius:12px;padding:12px 15px;font-weight:750;transition:transform .15s,opacity .15s}.btn:active{transform:scale(.98)}.btn-primary{background:var(--primary);color:white}.btn-soft{background:var(--lav);color:var(--primary)}.btn-outline{background:white;border:1px solid var(--border);color:var(--primary)}
-.progress-wrap{display:flex;align-items:center;gap:12px;margin:4px 0 14px;color:var(--muted);font-size:12px;font-weight:700}.progress{height:7px;border-radius:99px;background:#e8e4ef;overflow:hidden;flex:1}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--primary),var(--berry));transition:width .25s}
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 275px;gap:18px;align-items:start}.card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.card-head{padding:24px 26px 18px;border-bottom:1px solid #f0edf5}.meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.tag{font-size:11px;text-transform:uppercase;letter-spacing:.07em;font-weight:800;border-radius:999px;padding:5px 9px;background:var(--lav);color:var(--primary)}.tag.berry{background:var(--pink);color:var(--berry)}.word-row{display:flex;align-items:center;gap:12px;margin-top:13px}.word{font-size:clamp(35px,6vw,52px);letter-spacing:-.05em;line-height:1.1;font-weight:850;overflow-wrap:anywhere}.icon-btn{display:inline-grid;place-items:center;width:42px;height:42px;flex-shrink:0;border:1px solid var(--border);background:white;border-radius:13px;color:var(--primary);font-size:18px}.ipa{color:var(--muted);margin-top:8px;font-size:14px}.card-body{padding:22px 26px 25px}.meaning-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:850;color:var(--berry);margin-bottom:6px}.definition{font-size:17px;font-weight:650;margin:0 0 5px}.translation{font-size:15px;color:var(--muted);margin:0 0 19px}.examples-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:18px 0 10px}.examples-title h3{font-size:14px;margin:0}.examples-title span{font-size:11px;color:var(--muted)}.example{border:1px solid var(--border);background:#fff;border-radius:14px;padding:13px 13px 12px;margin-top:9px}.example-top{display:flex;align-items:start;gap:10px}.example-text{flex:1;font-size:14px;font-weight:650}.example .icon-btn{width:32px;height:32px;border-radius:10px;font-size:14px}.example-translation{font-size:12px;color:var(--muted);margin-top:5px}.example-context{display:inline-block;margin-top:8px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--berry);background:var(--pink);border-radius:99px;padding:3px 7px}
-.extra{margin-top:18px;display:grid;gap:13px}.extra h4{margin:0 0 7px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{border-radius:8px;background:var(--soft);color:var(--primary);font-size:12px;padding:5px 8px}.word-family .chip{background:#f8edf2;color:var(--berry)}
-.card-footer{padding:16px 22px;background:#fcfbfd;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:10px}.nav-btns{display:flex;gap:8px}.nav-btns .btn{min-width:95px}.card-footer .hint{font-size:11px;color:var(--muted)}
-.side{display:grid;gap:14px}.side-card{border:1px solid var(--border);border-radius:18px;padding:17px;background:white}.side-card h3{font-size:14px;margin:0 0 12px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px}.stat{background:var(--soft);border-radius:12px;padding:12px}.stat strong{display:block;font-size:22px;color:var(--primary);line-height:1.1}.stat span{font-size:11px;color:var(--muted)}.side-actions{display:grid;gap:8px}.side-actions .btn{width:100%;text-align:left}.image-box{height:145px;border-radius:14px;background:linear-gradient(135deg,#f0edf5,#fff0f4);display:grid;place-items:center;overflow:hidden;margin-bottom:13px;color:var(--primary);text-align:center;padding:12px}.image-box img{width:100%;height:100%;object-fit:cover}.image-placeholder .big{font-size:34px}.image-placeholder p{font-size:11px;color:var(--muted);margin:5px 0 0}.image-link{font-size:12px;color:var(--berry);text-decoration:none;font-weight:750}.empty{padding:42px 20px;text-align:center}.empty h3{margin:0 0 8px}.empty p{color:var(--muted)}.status{font-size:12px;color:var(--muted);min-height:18px;margin-top:8px}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--deep);color:white;padding:10px 15px;border-radius:99px;font-size:12px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s}.toast.show{opacity:1}
-@media(max-width:800px){.layout{grid-template-columns:1fr}.side{grid-template-columns:1fr 1fr}.toolbar{grid-template-columns:1fr 1fr}.toolbar .search{grid-column:1/-1}.intro{align-items:start;flex-direction:column}.count-pill{align-self:start}}
-@media(max-width:520px){main{padding:20px 12px 36px}.topbar{padding:17px 15px}.toolbar{grid-template-columns:1fr 1fr;gap:8px}.toolbar .search{grid-column:1/-1}.field,.btn{padding:11px}.card-head{padding:20px 18px 16px}.card-body{padding:19px 18px 22px}.word{font-size:39px}.side{grid-template-columns:1fr}.card-footer{padding:14px;align-items:stretch;flex-direction:column}.nav-btns{display:grid;grid-template-columns:1fr 1fr}.nav-btns .btn{min-width:0}.card-footer .hint{text-align:center}.image-box{height:125px}}
+a{color:inherit;text-decoration:none}.top{background:linear-gradient(120deg,#413B63 0%,#63335D 50%,#8C2D52 100%);color:white;padding:26px 20px 30px}
+.top-inner,main,.footer-inner{max-width:900px;margin:auto}.brand{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+h1{font-size:clamp(28px,6vw,38px);line-height:1.15;margin:20px 0 8px;letter-spacing:-.03em}.subtitle{max-width:620px;margin:0;color:#ffffffd9;font-size:14px;line-height:1.7}
+main{padding:26px 18px 36px}.summary{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.level{font-weight:800;font-size:15px}.count{font-size:12px;color:var(--muted);text-align:right}
+.progress{height:8px;background:#e7e2ec;border-radius:99px;overflow:hidden;margin-bottom:26px}.progress span{display:block;height:100%;width:0;background:var(--yellow);transition:width .2s}
+.section-title{font-size:19px;margin:0 0 14px;letter-spacing:-.02em}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.set{display:block;background:var(--surface);border:1px solid var(--border);border-radius:17px;padding:16px;transition:transform .15s,border-color .15s,box-shadow .15s;min-width:0}
+.set:hover,.set:focus-visible{transform:translateY(-2px);border-color:#c8bddf;box-shadow:var(--shadow);outline:none}
+.set-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.set-number{font-size:17px;font-weight:850;letter-spacing:-.02em}
+.icon{width:30px;height:30px;display:grid;place-items:center;border-radius:10px;background:var(--lav);color:var(--primary);flex-shrink:0}
+.set-info{margin-top:8px;color:var(--muted);font-size:12px}.bar{height:5px;background:#eeeaf2;border-radius:99px;margin-top:13px;overflow:hidden}.bar span{display:block;height:100%;width:0;background:var(--primary);border-radius:99px}.set.done .bar span{background:var(--green)}.set.done .icon{background:#e6f5eb;color:var(--green)}.status{display:none;margin-top:8px;font-size:11px;font-weight:800;color:var(--green)}.set.done .status{display:block}
+.notice{margin-top:20px;padding:13px 15px;border-radius:13px;background:var(--soft);color:var(--muted);font-size:12px;line-height:1.6}
+footer{background:var(--primary);color:#fff;text-align:center;padding:24px 18px}.footer-title{font-size:12px;font-weight:800;letter-spacing:.08em}.footer-copy{font-size:11px;opacity:.75;margin-top:6px}
+@media(min-width:600px){.top{padding:34px 28px 38px}main{padding:34px 28px 40px}.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.set{padding:18px}}
+@media(min-width:900px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="brand">
-    <div class="logo">EH</div>
-    <div><h1>EnglishHack</h1><p>Vocabulary practice · B1</p></div>
-  </div>
-</header>
+<header class="top"><div class="top-inner">
+  <div class="brand">TKA ENGLISH SURVIVAL KIT</div>
+  <h1>Vocabulary Booster</h1>
+  <p class="subtitle">Belajar kosakata sedikit demi sedikit. Setiap set berisi hingga 20 kata, lengkap dengan arti, pelafalan, dan contoh kalimat.</p>
+</div></header>
 <main>
-  <section class="intro">
-    <div><div class="eyebrow">Build your vocabulary</div><h2>Vocab Drill</h2><p>Learn a word, listen to its pronunciation, and practise it in real sentences.</p></div>
-    <div class="count-pill" id="totalPill">Loading words…</div>
-  </section>
-  <section class="toolbar" aria-label="Vocabulary filters">
-    <input id="search" class="field search" type="search" placeholder="Search a word or meaning…" aria-label="Search words">
-    <select id="posFilter" class="field" aria-label="Filter by part of speech"><option value="">All word types</option></select>
-    <select id="levelFilter" class="field" aria-label="Filter by CEFR level"><option value="">All levels</option></select>
-    <button id="shuffleBtn" class="btn btn-soft" type="button">⤨ Shuffle</button>
-  </section>
-  <div class="progress-wrap"><span id="progressText">Card 0 of 0</span><div class="progress"><div class="progress-bar" id="progressBar"></div></div><span id="percentText">0%</span></div>
-  <section class="layout">
-    <article class="card" id="mainCard">
-      <div class="empty"><h3>Loading your vocabulary…</h3><p>Please wait a moment.</p></div>
-    </article>
-    <aside class="side">
-      <section class="side-card">
-        <h3>Your session</h3>
-        <div class="stats"><div class="stat"><strong id="shownStat">0</strong><span>Words in list</span></div><div class="stat"><strong id="indexStat">0</strong><span>Current card</span></div></div>
-      </section>
-      <section class="side-card">
-        <h3>Word image</h3>
-        <div class="image-box" id="imageBox"><div class="image-placeholder"><div class="big">✦</div><p>Visual memory helps.<br>Image appears when a URL is added to the JSON.</p></div></div>
-        <a class="image-link" id="imageSearch" href="https://unsplash.com/" target="_blank" rel="noopener noreferrer">Find a photo on Unsplash ↗</a>
-      </section>
-      <section class="side-card">
-        <h3>Quick actions</h3>
-        <div class="side-actions">
-          <button id="speakWordBtn" class="btn btn-outline" type="button">🔊 Hear the word</button>
-          <button id="speakExamplesBtn" class="btn btn-outline" type="button">🔊 Hear examples</button>
-          <button id="repeatBtn" class="btn btn-outline" type="button">↻ Repeat this card</button>
-        </div>
-        <div class="status" id="speechStatus" aria-live="polite"></div>
-      </section>
-    </aside>
-  </section>
-  <p style="text-align:center;color:var(--muted);font-size:11px;margin:24px 0 0">EnglishHack · Keep practising, one word at a time 💜</p>
+  <div class="summary"><div class="level" id="level">Vocabulary Practice</div><div class="count" id="overall">Memuat kosakata…</div></div>
+  <div class="progress" aria-label="Progres keseluruhan"><span id="overallBar"></span></div>
+  <h2 class="section-title">Pilih set belajar</h2>
+  <section class="grid" id="sets" aria-live="polite"></section>
+  <p class="notice" id="notice">Progres set disimpan di browser yang kamu gunakan. Pastikan membuka website melalui GitHub Pages atau server lokal.</p>
 </main>
-<div class="toast" id="toast" role="status"></div>
+<footer><div class="footer-title">TKA ENGLISH SURVIVAL KIT</div><div class="footer-copy">SMAIT Ittihadul Muwahidin</div></footer>
 <script>
-(() => {
-  "use strict";
-  const $ = (selector) => document.querySelector(selector);
-  const state = { all: [], filtered: [], index: 0, currentMeaning: 0, seen: new Set() };
-  const els = {
-    card: $("#mainCard"), search: $("#search"), pos: $("#posFilter"), level: $("#levelFilter"),
-    total: $("#totalPill"), progressText: $("#progressText"), progressBar: $("#progressBar"),
-    percent: $("#percentText"), shown: $("#shownStat"), index: $("#indexStat"),
-    imageBox: $("#imageBox"), imageSearch: $("#imageSearch"), status: $("#speechStatus"), toast: $("#toast")
-  };
-  const escapeHTML = (value) => String(value ?? "").replace(/[&<>"']/g, ch => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-  })[ch]);
-  const current = () => state.filtered[state.index];
-  const meanings = (entry) => Array.isArray(entry?.meanings) ? entry.meanings : [];
-  const currentMeaning = () => meanings(current())[state.currentMeaning] || meanings(current())[0] || {};
-  function toast(message) {
-    els.toast.textContent = message; els.toast.classList.add("show");
-    window.setTimeout(() => els.toast.classList.remove("show"), 1800);
+const SET_SIZE = 20;
+const PROGRESS_KEY = "smaitVocabProgress";
+const completed = new Set(JSON.parse(localStorage.getItem(PROGRESS_KEY) || "[]"));
+const setsEl = document.getElementById("sets");
+const overall = document.getElementById("overall");
+const overallBar = document.getElementById("overallBar");
+const level = document.getElementById("level");
+function esc(s){return String(s ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+fetch("./words-b1.json").then(r=>{if(!r.ok)throw new Error("JSON tidak ditemukan");return r.json()}).then(words=>{
+  const totalSets=Math.ceil(words.length/SET_SIZE);
+  const counts={}; words.forEach(w=>{const k=w.cefr||"Mixed";counts[k]=(counts[k]||0)+1});
+  level.textContent = `${words.length.toLocaleString("id-ID")} kosakata`;
+  for(let i=1;i<=totalSets;i++){
+    const start=(i-1)*SET_SIZE, count=Math.min(SET_SIZE,words.length-start), done=completed.has(i);
+    const card=document.createElement("a");
+    card.className="set"+(done?" done":""); card.href=`./vocabulary.html?set=${i}`;
+    card.setAttribute("aria-label",`Set ${i}, ${count} kosakata${done?", selesai":""}`);
+    card.innerHTML=`<div class="set-top"><div class="set-number">SET ${String(i).padStart(2,"0")}</div><div class="icon" aria-hidden="true">${done?"✓":"↗"}</div></div>
+      <div class="set-info">${count} kata · ${esc(words[start]?.cefr||"Mixed")}${count===1?"":"+"}</div>
+      <div class="bar"><span style="width:${done?100:0}%"></span></div><div class="status">${done?"✓ Selesai":"Set selesai akan ditandai di sini"}</div>`;
+    setsEl.appendChild(card);
   }
-  function fillFilters() {
-    const positions = [...new Set(state.all.map(x => x.pos).filter(Boolean))].sort();
-    const levels = [...new Set(state.all.map(x => x.cefr).filter(Boolean))].sort();
-    positions.forEach(v => els.pos.add(new Option(v[0].toUpperCase()+v.slice(1), v)));
-    levels.forEach(v => els.level.add(new Option(v, v)));
-  }
-  function filterWords() {
-    const q = els.search.value.trim().toLowerCase();
-    state.filtered = state.all.filter(entry => {
-      const text = [entry.word, entry.pos, entry.ipa, ...(entry.meanings || []).flatMap(m => [m.definition,m.indonesian,...(m.examples||[]).flatMap(e => [e.sentence,e.translation])]), ...(entry.collocations||[]), ...(entry.word_family||[])].join(" ").toLowerCase();
-      return (!q || text.includes(q)) && (!els.pos.value || entry.pos === els.pos.value) && (!els.level.value || entry.cefr === els.level.value);
-    });
-    state.index = 0; state.currentMeaning = 0; render();
-  }
-  function speak(text, label="") {
-    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-      els.status.textContent = "Audio is not supported by this browser."; return;
-    }
-    if (!text) return;
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "en-US"; utterance.rate = 0.88;
-    utterance.onstart = () => { els.status.textContent = label ? `Playing ${label}…` : "Playing audio…"; };
-    utterance.onend = () => { els.status.textContent = "Audio finished."; };
-    utterance.onerror = () => { els.status.textContent = "Audio could not be played on this device."; };
-    window.speechSynthesis.speak(utterance);
-  }
-  function renderImage(entry) {
-    const image = entry.image;
-    const url = typeof image === "string" ? image : image?.url;
-    if (url) {
-      const alt = typeof image === "object" ? (image.alt || entry.word) : entry.word;
-      els.imageBox.innerHTML = `<img src="${escapeHTML(url)}" alt="${escapeHTML(alt)}" loading="lazy" referrerpolicy="no-referrer">`;
-    } else {
-      els.imageBox.innerHTML = `<div class="image-placeholder"><div class="big">✦</div><p>No image URL in this JSON entry yet.</p></div>`;
-    }
-    els.imageSearch.href = "https://unsplash.com/s/photos/" + encodeURIComponent(entry.word);
-  }
-  function render() {
-    const entry = current();
-    els.total.textContent = `${state.all.length.toLocaleString()} vocabulary entries`;
-    els.shown.textContent = state.filtered.length.toLocaleString();
-    els.index.textContent = state.filtered.length ? String(state.index+1) : "0";
-    const count = state.filtered.length;
-    const pct = count ? Math.round(((state.index+1)/count)*100) : 0;
-    els.progressText.textContent = count ? `Card ${state.index+1} of ${count}` : "No matching words";
-    els.progressBar.style.width = `${pct}%`; els.percent.textContent = `${pct}%`;
-    if (!entry) {
-      els.card.innerHTML = `<div class="empty"><h3>No words found</h3><p>Try another search or change the filters.</p><button class="btn btn-primary" id="clearFilters">Clear filters</button></div>`;
-      $("#clearFilters").addEventListener("click", () => { els.search.value="";els.pos.value="";els.level.value="";filterWords(); });
-      renderImage({word:"vocabulary"}); return;
-    }
-    state.seen.add(`${entry.word}|${entry.pos}`);
-    const ms = meanings(entry);
-    if (state.currentMeaning >= ms.length) state.currentMeaning = 0;
-    const m = currentMeaning();
-    const examples = Array.isArray(m.examples) ? m.examples : [];
-    const meaningPicker = ms.length > 1 ? `<label style="font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px;margin-bottom:16px">Meaning <select id="meaningSelect" class="field" style="max-width:90px;padding:7px 9px">${ms.map((_,i)=>`<option value="${i}" ${i===state.currentMeaning?"selected":""}>${i+1} of ${ms.length}</option>`).join("")}</select></label>` : "";
-    const examplesHTML = examples.map((ex,i)=>`<div class="example"><div class="example-top"><div class="example-text">${escapeHTML(ex.sentence || "")}</div><button class="icon-btn" type="button" data-speak-example="${i}" aria-label="Listen to example ${i+1}" title="Listen">🔊</button></div>${ex.translation?`<div class="example-translation">${escapeHTML(ex.translation)}</div>`:""}${ex.context?`<span class="example-context">${escapeHTML(ex.context)}</span>`:""}</div>`).join("");
-    const collocations = (entry.collocations||[]).map(x=>`<span class="chip">${escapeHTML(x)}</span>`).join("");
-    const family = (entry.word_family||[]).map(x=>`<span class="chip">${escapeHTML(x)}</span>`).join("");
-    els.card.innerHTML = `
-      <div class="card-head"><div class="meta"><span class="tag">${escapeHTML(entry.cefr||"Vocabulary")}</span><span class="tag berry">${escapeHTML(entry.pos||"word")}</span>${m.register?`<span class="tag">${escapeHTML(m.register)}</span>`:""}</div>
-      <div class="word-row"><div class="word">${escapeHTML(entry.word)}</div><button class="icon-btn" id="wordAudio" type="button" aria-label="Listen to word" title="Listen to pronunciation">🔊</button></div>
-      <div class="ipa">${escapeHTML(entry.ipa||"Pronunciation not provided")}</div></div>
-      <div class="card-body">${meaningPicker}<div class="meaning-label">Meaning ${ms.length>1?state.currentMeaning+1:""}</div>
-      <p class="definition">${escapeHTML(m.definition||"Definition not available.")}</p><p class="translation">${escapeHTML(m.indonesian||"Indonesian translation not available.")}</p>
-      <div class="examples-title"><h3>Example sentences</h3><span>${examples.length} examples</span></div>
-      ${examplesHTML || '<p class="translation">No example sentences available for this meaning.</p>'}
-      <div class="extra">${collocations?`<div><h4>Common collocations</h4><div class="chips">${collocations}</div></div>`:""}${family?`<div class="word-family"><h4>Word family</h4><div class="chips">${family}</div></div>`:""}</div></div>
-      <div class="card-footer"><span class="hint">Use the arrows to keep practising.</span><div class="nav-btns"><button class="btn btn-outline" id="prevBtn" type="button" ${state.index===0?"disabled":""}>← Previous</button><button class="btn btn-primary" id="nextBtn" type="button" ${state.index>=count-1?"disabled":""}>Next →</button></div></div>`;
-    $("#wordAudio").addEventListener("click",()=>speak(entry.word, "the word"));
-    $("#prevBtn").addEventListener("click",()=>move(-1));
-    $("#nextBtn").addEventListener("click",()=>move(1));
-    const picker=$("#meaningSelect"); if(picker) picker.addEventListener("change",()=>{state.currentMeaning=Number(picker.value);render();});
-    els.card.querySelectorAll("[data-speak-example]").forEach(btn=>btn.addEventListener("click",()=>{
-      const ex=examples[Number(btn.dataset.speakExample)]; if(ex) speak(ex.sentence,"the example sentence");
-    }));
-    renderImage(entry);
-  }
-  function move(step) {
-    if (!state.filtered.length) return;
-    const next = state.index + step;
-    if (next < 0 || next >= state.filtered.length) return;
-    state.index = next; state.currentMeaning=0; render();
-  }
-  function shuffle() {
-    for(let i=state.filtered.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[state.filtered[i],state.filtered[j]]=[state.filtered[j],state.filtered[i]];}
-    state.index=0;state.currentMeaning=0;render();toast("Cards shuffled!");
-  }
-  $("#shuffleBtn").addEventListener("click",shuffle);
-  $("#speakWordBtn").addEventListener("click",()=>{const e=current();if(e)speak(e.word,"the word");});
-  $("#speakExamplesBtn").addEventListener("click",()=>{const m=currentMeaning();const examples=m.examples||[];if(!examples.length)return;let i=0;const playNext=()=>{if(i>=examples.length)return;const u=new SpeechSynthesisUtterance(examples[i++].sentence);u.lang="en-US";u.rate=.88;u.onend=playNext;u.onerror=playNext;window.speechSynthesis.speak(u);};if("speechSynthesis"in window){speechSynthesis.cancel();playNext();}else els.status.textContent="Audio is not supported by this browser.";});
-  $("#repeatBtn").addEventListener("click",()=>{const e=current();if(e){state.currentMeaning=0;render();toast("Card reset.");}});
-  els.search.addEventListener("input",filterWords);els.pos.addEventListener("change",filterWords);els.level.addEventListener("change",filterWords);
-  document.addEventListener("keydown",e=>{if(["INPUT","SELECT","TEXTAREA"].includes(document.activeElement.tagName))return;if(e.key==="ArrowRight")move(1);if(e.key==="ArrowLeft")move(-1);});
-  fetch("./words-b1.json").then(response=>{if(!response.ok)throw new Error(`Could not load JSON (${response.status})`);return response.json();})
-    .then(data=>{if(!Array.isArray(data))throw new Error("Expected the JSON root to be an array.");state.all=data;state.filtered=[...data];fillFilters();render();})
-    .catch(error=>{console.error(error);els.total.textContent="Could not load data";els.card.innerHTML=`<div class="empty"><h3>Couldn't load the vocabulary file</h3><p>Make sure <strong>words-b1.json</strong> is in the same folder as <strong>index.html</strong>, then open the site through GitHub Pages or a local server (not file://).</p><p style="font-size:12px">${escapeHTML(error.message)}</p></div>`;});
-})();
+  const n=Math.min(completed.size,totalSets);
+  overall.textContent=`${n} / ${totalSets} set selesai`;
+  overallBar.style.width=`${totalSets?n/totalSets*100:0}%`;
+}).catch(err=>{
+  overall.textContent="Data belum bisa dimuat";
+  document.getElementById("notice").textContent="File words-b1.json tidak ditemukan atau tidak bisa dibaca. Letakkan file JSON satu folder dengan halaman ini dan buka melalui server/GitHub Pages.";
+});
 </script>
-</body>
-</html>
+</body></html>
